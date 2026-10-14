@@ -1,0 +1,11 @@
+class Student:
+    def __init__(self,name,Student_id,grade):
+        self.name=name
+        self.Student_id=Student_id
+        self.grade=grade
+
+student1=Student("youssef","121212",87)    
+
+print(student1.name)
+print(student1.Student_id)
+print(student1.grade)
