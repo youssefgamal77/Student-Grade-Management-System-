@@ -1,0 +1,29 @@
+class Student:
+def __init__(self, name, student_id, grade):
+        self.name = name
+        self.student_id = student_id
+        self.grade = grade
+
+
+class Undergraduate_student(Student):
+    def __init__(self, name, student_id, grade, major):
+        super().__init__(name, student_id, grade)
+        self.major = major
+        
+    def display_info(self):
+        print(self.name)
+        print(self.student_id)
+        print(self.grade)
+        print(self.major)
+
+class Graduate_student(Student):
+    def __init__(self, name, student_id, grade, Program_title):
+        super().__init__(self, name, student_id, grade)
+        self.Program_title = Program_title
+        
+        
+    def display_info(self):
+        print(self.name)
+        print(self.student_id)
+        print(self.grade)
+        print(self.Program_title)
