@@ -1,0 +1,41 @@
+class Student:
+    def __init__(self, name, student_id, grade):
+         self.name = name
+         self.student_id = student_id
+         self.grade = grade
+         self.__grades=[]
+    def get_grades(self):
+           return list(self.__grades)
+    def add_grades(self,grade):
+        if 0<= grade <=100:
+           self.__grade.append(grade)
+    def calculate_average(self):
+        if len(self.__grades)== 0:
+           return 0
+        return sum(self.__grades) / len(self.__grades)
+    def Calculate_grade(self):
+        if len(self.__grades)== 0:
+           return "N/A"
+        average = sum(self.__grades) / len(self.__grades)
+        if average>=90:
+           return "A"
+        elif average>=80:
+           return "B"
+        elif average>=70:
+           return "C"
+        elif average>=60:
+           return "D"
+        else:
+           return "F"
+     def display_info(self):
+         print(self.name)
+         print(self.student_id)
+         print(self.grade)
+         print(self.get_grades())
+         print(self.calculate_average())
+         print(self.Calculate_grade())
+
+student1=Student("youssef","01259",99)
+student1.add_grades(98)
+student1.add_grades(88)
+student1.display_info()
