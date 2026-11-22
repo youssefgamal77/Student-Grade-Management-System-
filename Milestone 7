@@ -1,0 +1,58 @@
+def save_students(students, filename):
+
+f = open(filename, "w")
+  for s in students:
+grades = ";".join(str(g) for g in s.get_grades())
+
+    if isinstance(s, UndergraduateStudent):
+
+    line = "Undergraduate," + s.name + "," + s.student_id + "," + s.major + "," + grades
+
+       else:
+
+    line = "Graduate," + s.name + "," + s.student_id + "," + s.program_title + "," + grades
+
+f.write(line + "")
+f.close()
+
+def read_students(filename):
+students = []
+    try:
+ f = open(filename, "r")
+ for line in f:
+    data = line.strip().split(",")
+        if data[0] == "Undergraduate":
+
+s = UndergraduateStudent(data[1], data[2], data[3])
+    else:
+
+s = GraduateStudent(data[1], data[2], data[3])
+
+for g in data[4].split(";"):
+s.add_grades(float(g))
+students.append(s)
+f.close()
+
+except FileNotFoundError:
+print("File not found")
+return students
+
+s1 = UndergraduateStudent("Omar Ali", "U1001", "Electrical Engineering")
+s2 = GraduateStudent("Mona Hassan", "G2001", "MSc Artificial Intelligence")
+
+s1.add_grades(78)
+s1.add_grades(85)
+s1.add_grades(69)
+s2.add_grades(90)
+s2.add_grades(88)
+s2.add_grades(95)
+students = [s1, s2]
+
+save_students(students, "students.txt")
+new_students = read_students("students.txt")
+
+for s in new_students:
+s.display_info()
+read_students("wrong.txt")
+
+What about this
