@@ -1,0 +1,15 @@
+
+undergraduate = UndergraduateStudent("Ahmed", 101, "Electrical Engineering")
+
+graduate = GraduateStudent("Omar", 102, "Computer Science")
+
+undergraduate.add_grades(85)
+undergraduate.add_grades(90)
+undergraduate.add_grades(75)
+
+graduate.add_grades(80)
+graduate.add_grades(70)
+graduate.add_grades(95)
+
+undergraduate.display_info()
+graduate.display_info()
